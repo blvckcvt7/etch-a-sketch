@@ -1,6 +1,19 @@
-.square {
+.container {
+}
+
+.cont-two,
+.cont-three {
   display: flex;
+}
+
+.square {
   width: 100px;
   height: 100px;
   background-color: rgb(84, 175, 255);
+  margin: 2px;
+  border: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
