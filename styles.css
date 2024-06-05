@@ -1,19 +1,19 @@
 .container {
-}
-
-.cont-two,
-.cont-three {
   display: flex;
 }
 
 .square {
   width: 100px;
   height: 100px;
-  background-color: rgb(84, 175, 255);
+  background-color: rgb(216, 216, 216);
   margin: 2px;
   border: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex: 1;
+}
+
+.hovered {
+  background-color: rgb(102, 102, 102);
 }
