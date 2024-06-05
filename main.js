@@ -1,15 +1,11 @@
 'use strict';
 
 const container = document.querySelector('.container');
-// const secondaryCont = document.createElement('div');
-// const terciaryCont = document.createElement('div');
 
-// secondaryCont.className = 'cont-two';
-// terciaryCont.className = 'cont-three';
+const button = document.querySelector('.btn');
+button.textContent = 'CLICK ME!';
 
-// container.appendChild(secondaryCont);
-// container.append(terciaryCont);
-
+//create 16 divs each with 16 divs inside
 for (let i = 1; i <= 16; i++) {
   let secondaryCont = document.createElement('div');
 
@@ -25,31 +21,24 @@ for (let i = 1; i <= 16; i++) {
   }
 }
 
-const squares = document.querySelectorAll('.square'); //it creates a nodelist
+//Select all the elements with a class 'square' and add a class 'hovered'
+const squares = document.querySelectorAll('.square');
 squares.forEach((square) => {
   square.addEventListener('mouseover', () => {
     square.classList.add('hovered');
   });
 });
 
-// function createDiv() {
-//   for (let i = 1; i <= 16; i++) {
-//     let newDiv = document.createElement('div');
+function buttonClick() {
+  // Prompts the user for a number of height and width squares
+  let widthSquares = prompt('Enter a number of squares for the width.');
+  console.log(widthSquares);
 
-//     newDiv.className = 'square';
-//     newDiv.textContent = i;
-//     contTwo.appendChild(newDiv);
-//   }
-// }
-// createDiv();
+  let heightSquares = prompt('Enter a number of squares for the height.');
+  console.log(heightSquares);
+}
 
-// function createDiv2() {
-//   for (let i = 1; i <= 16; i++) {
-//     let newDiv = document.createElement('div');
-
-//     newDiv.className = 'square';
-//     newDiv.textContent = i;
-//     contThree.appendChild(newDiv);
-//   }
-// }
-// createDiv2();
+// Calls the function on btn click
+button.addEventListener('click', () => {
+  buttonClick();
+});

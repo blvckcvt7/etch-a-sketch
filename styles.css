@@ -17,3 +17,9 @@
 .hovered {
   background-color: rgb(102, 102, 102);
 }
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
