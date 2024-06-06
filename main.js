@@ -34,6 +34,7 @@ function createGrid(containerNumber, squareNumber) {
 
 createGrid(16, 16);
 
+// checks if the number is > 100
 function overLimit(widthValue, heightValue) {
   if (widthValue > 100 || heightValue > 100) {
     return true;
