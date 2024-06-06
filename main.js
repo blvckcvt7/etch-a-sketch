@@ -6,39 +6,48 @@ const button = document.querySelector('.btn');
 button.textContent = 'CLICK ME!';
 
 //create 16 divs each with 16 divs inside
-for (let i = 1; i <= 16; i++) {
-  let secondaryCont = document.createElement('div');
 
-  secondaryCont.className = 'secondary-container';
-  container.appendChild(secondaryCont);
+function createGrid(containerNumber, squareNumber) {
+  for (let i = 1; i <= containerNumber; i++) {
+    let secondaryCont = document.createElement('div');
 
-  for (let j = 1; j <= 16; j++) {
-    let newDiv = document.createElement('div');
+    secondaryCont.className = 'secondary-container';
+    container.appendChild(secondaryCont);
 
-    newDiv.className = 'square';
-    newDiv.textContent = j;
-    secondaryCont.appendChild(newDiv);
+    for (let j = 1; j <= squareNumber; j++) {
+      let newDiv = document.createElement('div');
+
+      newDiv.className = 'square';
+      newDiv.textContent = j;
+      secondaryCont.appendChild(newDiv);
+    }
   }
-}
 
-//Select all the elements with a class 'square' and add a class 'hovered'
-const squares = document.querySelectorAll('.square');
-squares.forEach((square) => {
-  square.addEventListener('mouseover', () => {
-    square.classList.add('hovered');
+  //Select all the elements with a class 'square' and add a class 'hovered'
+  const squares = document.querySelectorAll('.square');
+  squares.forEach((square) => {
+    square.addEventListener('mouseover', () => {
+      square.classList.add('hovered');
+    });
   });
-});
-
-function buttonClick() {
-  // Prompts the user for a number of height and width squares
-  let widthSquares = prompt('Enter a number of squares for the width.');
-  console.log(widthSquares);
-
-  let heightSquares = prompt('Enter a number of squares for the height.');
-  console.log(heightSquares);
 }
 
-// Calls the function on btn click
+createGrid(16, 16);
+
+function overLimit(widthValue, heightValue) {
+  if (widthValue > 100 || heightValue > 100) {
+    return true;
+  }
+  return false;
+}
+
 button.addEventListener('click', () => {
-  buttonClick();
+  let widthSquares = prompt('Enter a number of squares for the width.');
+  let heightSquares = prompt('Enter a number of squares for the height.');
+
+  if (!overLimit(widthSquares, heightSquares)) {
+    createGrid(widthSquares, heightSquares);
+  } else {
+    alert('Invalid input. Try again.');
+  }
 });
