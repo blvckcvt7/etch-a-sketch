@@ -35,7 +35,7 @@ function createGrid(containerNumber, squareNumber) {
 createGrid(16, 16);
 
 // checks if the number is > 100
-function overLimit(widthValue, heightValue) {
+function checkLimit(widthValue, heightValue) {
   if (widthValue > 100 || heightValue > 100) {
     return true;
   }
@@ -46,7 +46,7 @@ button.addEventListener('click', () => {
   let widthSquares = prompt('Enter a number of squares for the width.');
   let heightSquares = prompt('Enter a number of squares for the height.');
 
-  if (!overLimit(widthSquares, heightSquares)) {
+  if (!checkLimit(widthSquares, heightSquares)) {
     createGrid(widthSquares, heightSquares);
   } else {
     alert('Invalid input. Try again.');
