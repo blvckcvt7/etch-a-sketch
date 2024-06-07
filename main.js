@@ -5,8 +5,7 @@ const container = document.querySelector('.container');
 const button = document.querySelector('.btn');
 button.textContent = 'CLICK ME!';
 
-//create 16 divs each with 16 divs inside
-
+// Create grid
 function createGrid(containerNumber, squareNumber) {
   for (let i = 1; i <= containerNumber; i++) {
     let secondaryCont = document.createElement('div');
@@ -22,16 +21,26 @@ function createGrid(containerNumber, squareNumber) {
       secondaryCont.appendChild(newDiv);
     }
   }
-
-  //Select all the elements with a class 'square' and add a class 'hovered'
-  const squares = document.querySelectorAll('.square');
+  // Add hover effect to .square
+  let squares = document.querySelectorAll('.square');
   squares.forEach((square) => {
     square.addEventListener('mouseover', () => {
       square.classList.add('hovered');
     });
   });
+
+  let secondaryContainerSelect = document.querySelectorAll(
+    '.secondary-container'
+  );
+
+  button.addEventListener('click', () => {
+    secondaryContainerSelect.forEach((secondaryContainer) => {
+      secondaryContainer.remove();
+    });
+  });
 }
 
+// Creates initial grid of 16x16
 createGrid(16, 16);
 
 // checks if the number is > 100
