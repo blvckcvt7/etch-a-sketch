@@ -7,7 +7,7 @@ button.textContent = 'CLICK ME!';
 
 let colors = ['green', 'blue', 'gray', 'red', 'yellow'];
 
-//Get a random number between 0 and colors.length to randomize colors on hover
+// Get a random number between 0 and colors.length to randomize colors on hover
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
