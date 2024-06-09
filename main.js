@@ -19,14 +19,14 @@ function getRandomInt(max) {
 }
 
 // Create grid
-function createGrid(containerNumber, squareNumber) {
-  for (let i = 1; i <= containerNumber; i++) {
+function createGrid(gridSize) {
+  for (let i = 1; i <= gridSize; i++) {
     let secondaryCont = document.createElement('div');
 
     secondaryCont.className = 'secondary-container';
     container.appendChild(secondaryCont);
 
-    for (let j = 1; j <= squareNumber; j++) {
+    for (let j = 1; j <= gridSize; j++) {
       let newDiv = document.createElement('div');
 
       newDiv.className = 'square';
@@ -57,23 +57,23 @@ function createGrid(containerNumber, squareNumber) {
 }
 
 // Creates initial grid of 16x16
-createGrid(16, 16);
+createGrid(16);
 
 // checks if the number is > 100
-function checkLimit(widthValue, heightValue) {
-  if (widthValue > 100 || heightValue > 100) {
+function checkLimit(size) {
+  if (size > 100) {
     return true;
   }
   return false;
 }
 
 button.addEventListener('click', () => {
-  let widthSquares = prompt('Enter a number of squares for the width.');
-  let heightSquares = prompt('Enter a number of squares for the height.');
+  let newSize = prompt('Enter a new size');
 
-  if (!checkLimit(widthSquares, heightSquares)) {
-    createGrid(widthSquares, heightSquares);
+  if (!checkLimit(newSize)) {
+    createGrid(newSize);
   } else {
     alert('Invalid input. Try again.');
+    createGrid(16);
   }
 });
