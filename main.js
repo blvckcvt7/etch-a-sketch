@@ -5,7 +5,13 @@ const container = document.querySelector('.container');
 const button = document.querySelector('.btn');
 button.textContent = 'CLICK ME!';
 
-let colors = ['green', 'blue', 'gray', 'red', 'yellow'];
+let colors = [
+  'rgb(255, 153, 153)',
+  'rgb(255, 102, 102)',
+  'rgb(255, 51, 51)',
+  'rgb(255, 0, 0)',
+  'rgb(204, 0, 0)',
+];
 
 // Get a random number between 0 and colors.length to randomize colors on hover
 function getRandomInt(max) {

@@ -29,9 +29,9 @@ body {
   flex: 1;
 }
 
-.hovered {
+/* .hovered {
   background-color: rgb(105, 105, 105);
-}
+} */
 
 .btn-container {
   display: flex;
