@@ -1,11 +1,12 @@
 body {
   display: flex;
   flex-direction: column;
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 .container {
   display: flex;
+  margin-top: 8px;
 }
 
 .secondary-container {
@@ -29,7 +30,7 @@ body {
 }
 
 .hovered {
-  background-color: rgb(102, 102, 102);
+  background-color: rgb(105, 105, 105);
 }
 
 .btn-container {
@@ -38,4 +39,8 @@ body {
   align-items: center;
   max-width: 900px;
   max-height: 900px;
+}
+
+.btn {
+  border-radius: 7px;
 }

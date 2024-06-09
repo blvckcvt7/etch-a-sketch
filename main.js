@@ -5,6 +5,13 @@ const container = document.querySelector('.container');
 const button = document.querySelector('.btn');
 button.textContent = 'CLICK ME!';
 
+let colors = ['green', 'blue', 'gray', 'red', 'yellow'];
+
+//Get a random number between 0 and colors.length to randomize colors on hover
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
 // Create grid
 function createGrid(containerNumber, squareNumber) {
   for (let i = 1; i <= containerNumber; i++) {
@@ -26,6 +33,9 @@ function createGrid(containerNumber, squareNumber) {
   squares.forEach((square) => {
     square.addEventListener('mouseover', () => {
       square.classList.add('hovered');
+      if (square.classList.contains('hovered')) {
+        square.style.backgroundColor = colors[getRandomInt(colors.length)];
+      }
     });
   });
 
