@@ -3,7 +3,7 @@
 const container = document.querySelector('.container');
 
 const button = document.querySelector('.btn');
-button.textContent = 'CLICK ME!';
+button.textContent = 'Change Size!';
 
 let colors = [
   'rgb(255, 153, 153)',
@@ -68,12 +68,12 @@ function checkLimit(size) {
 }
 
 button.addEventListener('click', () => {
-  let newSize = prompt('Enter a new size');
+  let newSize = prompt('Enter a new size!');
 
   if (!checkLimit(newSize)) {
     createGrid(newSize);
   } else {
-    alert('Invalid input. Try again.');
+    alert('Too high! Try again.');
     createGrid(16);
   }
 });
