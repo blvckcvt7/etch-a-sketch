@@ -17,7 +17,7 @@ function createGrid(containerNumber, squareNumber) {
       let newDiv = document.createElement('div');
 
       newDiv.className = 'square';
-      newDiv.textContent = j;
+      // newDiv.textContent = j;
       secondaryCont.appendChild(newDiv);
     }
   }
