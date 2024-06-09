@@ -17,15 +17,6 @@ h1 {
   border-style: solid;
   border-radius: 5px;
   margin-bottom: 10px;
-}
-
-.secondary-container {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.container {
   width: 900px;
   height: 700px;
   max-width: 900px;
@@ -34,10 +25,13 @@ h1 {
 }
 
 .secondary-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   width: 900px;
-  height: 700px;
+  height: auto;
   max-width: 900px;
-  max-height: 696px;
+  max-height: auto;
   box-sizing: border-box;
 }
 
